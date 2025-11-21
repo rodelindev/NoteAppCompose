@@ -44,7 +44,6 @@ class AddEditNoteViewModel @Inject constructor(
     private var currentNoteId: Int? = null
 
     init {
-
         savedStateHandle.get<Int>("noteId")?.let { noteId ->
             if (noteId != -1) {
                 viewModelScope.launch {
@@ -63,7 +62,6 @@ class AddEditNoteViewModel @Inject constructor(
                 }
             }
         }
-
     }
 
     fun onEvent(event: AddEditNoteEvent) {
@@ -117,7 +115,6 @@ class AddEditNoteViewModel @Inject constructor(
             }
         }
     }
-
 
     sealed class UiEvent {
         data class ShowSnackBar(val message: String) : UiEvent()
